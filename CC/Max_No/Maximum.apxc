@@ -1,0 +1,23 @@
+public class Maximum{
+    public Integer x {get; set;}
+    public Integer y {get; set;}
+    public Integer z {get; set;}
+    public String result {get; set;}
+    
+    public void compare(){
+        if( x!=0 && y!=0 && z!=0){
+            if(x==y && y==z){
+                result = x+' is the greatest number';
+            }
+            else if(x>y && x>z){
+                result = x+' is the greatest number';
+            }
+            else if(y>x && y>z){
+                result = y+' is the greatest';
+            }
+            else{
+                result = z+' is the greatest';
+            }
+        }
+    }
+}

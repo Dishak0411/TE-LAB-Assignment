@@ -1,0 +1,15 @@
+<apex:page controller="TempConvert">
+    <apex:form>
+        <apex:pageBlock title="Celsius to Fahrenheit Converter">
+            <apex:pageBlockSection columns="1">
+                <apex:inputText value="{!celsius}" label="Enter temperature in °C"/>
+                <apex:commandButton value="Convert" action="{!convert}" rerender="result"/>
+            </apex:pageBlockSection>
+            <apex:outputPanel id="result">
+                <apex:outputText value="Temperature in °F is: {!fahrenheit}" 
+                                 rendered="{!NOT(ISNULL(fahrenheit))}" 
+                                 style="font-weight:bold; margin-top:10px; display:block;" />
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

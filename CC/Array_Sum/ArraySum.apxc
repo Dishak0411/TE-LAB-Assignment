@@ -1,0 +1,11 @@
+public class ArraySum {
+    public void sumArray(List<Integer> arr) {
+        Integer sum = 0;
+
+        for (Integer num : arr) {
+            sum += num;
+        }
+
+        System.debug('Sum of all elements: ' + sum);
+    }
+}

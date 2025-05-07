@@ -1,0 +1,21 @@
+public class GeometryArea {
+    public void calculateCircleArea(Double radius){
+        Double area = Math.PI * Math.pow(radius, 2);
+        System.debug('Area of circle : ' + area);
+    }
+    
+    public void calculateRectangleArea(Double len, Double wid){
+        Double area = len * wid;
+        System.debug('Area of Rectangle: ' + area);
+    }
+    
+    public void calculateTriangleArea(Double base, Double height){
+        Double area = 0.5 * base * height;
+        System.debug('Area of traingle: ' + area);
+    }
+    
+    public void calculateSquareArea(Double side){
+        Double area = side * side;
+        System.debug('Area of square: ' + area);
+    }
+}

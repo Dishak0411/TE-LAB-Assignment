@@ -1,0 +1,12 @@
+<apex:page controller="ElectricityBill">
+    <apex:form>
+        <apex:pageBlock title="Electricity Bill Calculator">
+            <apex:pageBlockSection columns="1">
+                <apex:outputText value="{!rateInfo}" style="white-space:pre; font-weight:bold;" />
+                <apex:inputText value="{!units}" label="Enter units consumed:"/>
+                <apex:commandButton value="Calculate" action="{!calculate_amt}" />
+                <apex:outputText value="Total Amount: Rs {!amount}" rendered="{!NOT(ISNULL(amount))}" style="font-weight:bold; margin-top:10px;" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

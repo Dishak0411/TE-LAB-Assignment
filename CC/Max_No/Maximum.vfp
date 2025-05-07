@@ -1,0 +1,14 @@
+<apex:page controller="Maximum">
+    <apex:sectionHeader title = "Maximum" />
+    <apex:form>
+       	<apex:pageBlock title = "Find Greatest Number">
+            <apex:pageBlockSection columns = "1">
+                <apex:inputText value = "{!x}" label = "Enter first Number:"/>
+                <apex:inputText value = "{!y}" label = "Enter second Number:"/>
+                <apex:inputText value = "{!z}" label = "Enter third Number:"/>
+                <apex:commandButton value = "Compare" action = "{!compare}" />
+                <apex:outputText value = "{!result}" style = "font-weight:bold;" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,34 @@
+public class CurrencyConverter {
+
+    public String fromCurrency { get; set; }
+    public String toCurrency { get; set; }
+    public Double amount { get; set; }
+    public String result { get; set; }
+
+    public void convert() {
+        Double conversionRate = 0.0;
+
+        if (fromCurrency == 'INR' && toCurrency == 'USD') {
+            conversionRate = 0.012;
+        } else if (fromCurrency == 'USD' && toCurrency == 'INR') {
+            conversionRate = 83.38;
+        } else if (fromCurrency == 'INR' && toCurrency == 'Pound') {
+            conversionRate = 0.0096;
+        } else if (fromCurrency == 'Pound' && toCurrency == 'INR') {
+            conversionRate = 104.63;
+        } else if (fromCurrency == 'USD' && toCurrency == 'Pound') {
+            conversionRate = 0.80;
+        } else if (fromCurrency == 'Pound' && toCurrency == 'USD') {
+            conversionRate = 1.25;
+        } else if (fromCurrency == toCurrency) {
+            result = 'The currencies are the same: ' + fromCurrency;
+            return;
+        } else {
+            result = 'Conversion rate not available for ' + fromCurrency + ' to ' + toCurrency;
+            return;
+        }
+
+        Double convertedAmount = amount * conversionRate;
+        result = amount + ' ' + fromCurrency + ' is equal to ' + convertedAmount + ' ' + toCurrency;
+    }
+}

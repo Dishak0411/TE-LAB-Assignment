@@ -1,0 +1,13 @@
+public class CompoundInterest {
+    public void calculate(Double p, Double r, Integer t) {
+        // Formula for compound interest: A = P(1 + r/n)^(nt)
+        Double amount = p * Math.pow((1 + r / 100), t); // Compound interest formula
+        Double ci = amount - p; // Compound interest is the total amount minus the principal
+
+        System.debug('Principal: ₹' + p);
+        System.debug('Annual Interest Rate: ' + r + '%');
+        System.debug('Time Period: ' + t + ' years');
+        System.debug('Compound Interest: ₹' + ci);
+        System.debug('Total Amount (Principal + Interest): ₹' + amount);
+    }
+}

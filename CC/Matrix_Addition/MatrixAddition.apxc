@@ -1,0 +1,19 @@
+public class MatrixAddition {
+    public void addMatrices(List<List<Integer>> mat1, List<List<Integer>> mat2) {
+        if (mat1.size() != mat2.size() || mat1[0].size() != mat2[0].size()) {
+            System.debug('Matrices must be of the same size');
+            return;
+        }
+
+        List<List<Integer>> result = new List<List<Integer>>();
+
+        for (Integer i = 0; i < mat1.size(); i++) {
+            List<Integer> row = new List<Integer>();
+            for (Integer j = 0; j < mat1[i].size(); j++) {
+                row.add(mat1[i][j] + mat2[i][j]);
+            }
+            result.add(row);
+        }
+        System.debug('Resulting Matrix: ' + result);
+    }
+}

@@ -1,0 +1,19 @@
+public class Fibonacci {
+    public void generate(Integer n) {
+        if (n <= 0) {	
+            System.debug('Please provide a positive number.');
+            return;
+        }
+        Integer a = 0, b = 1;
+        if (n >= 1) System.debug(a);
+        if (n >= 2) System.debug(b);
+        
+        // Generate Fibonacci numbers from the 3rd number onward
+        for (Integer i = 2; i < n; i++) {
+            Integer next = a + b;
+            System.debug(next);
+            a = b;
+            b = next;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+<apex:page controller="Marksheet">
+    <apex:form>
+        <h1>Student Marksheet Entry</h1>
+        <hr/>
+        
+        <apex:pageBlock title="Enter Details">
+            <apex:pageBlockSection columns="2">
+                <apex:inputText label="Student Name" value="{!studentName}" required="true"/>
+                <apex:inputText label="Maths" value="{!maths}" required="true"/>
+                <apex:inputText label="Science" value="{!science}" required="true"/>
+                <apex:inputText label="English" value="{!english}" required="true"/>
+                <apex:inputText label="History" value="{!history}" required="true"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Calculate Result" action="{!calculateResult}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+        <apex:outputPanel rendered="{!showResult}">
+            <h3>Result for: {!studentName}</h3>
+            <p><b>Total Marks:</b> {!totalMarks}</p>
+            <p><b>Percentage:</b> {!percentage}%</p>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

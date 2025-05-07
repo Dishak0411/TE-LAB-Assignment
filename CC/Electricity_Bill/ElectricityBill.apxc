@@ -1,0 +1,38 @@
+public class ElectricityBill {
+    public Double units {get; set;}
+    public Double amount {get; set;}
+    public String rateInfo {get; set;}
+    
+    public ElectricityBill() {
+        rateInfo = 'Units : Rate per unit in Rs\n' +
+            		'0-100 : 3.36\n' +
+            		'101-300 : 7.34\n' +
+            		'301-500 : 10.37\n' +
+            		'>500 : 11.86';
+    }
+    
+    public void calculate_amt() {
+        Map<String, Double> rates = new Map<String, Double>{
+            '0-100' => 3.36,
+            '101-300' => 7.34,
+            '301-500' => 10.37,
+            '>500' => 11.86
+        };
+        
+        amount = 0;
+            if(units > 0 && units <= 100){
+                amount = units * 3.36;
+            }
+        	else if(units >= 101 && units <= 300){
+                amount = 100 * 3.36 + (units - 100) * 7.34;
+            }
+        	else if (units >= 301 && units <= 500) {
+            	amount = 100 * 3.36 + 200 * 7.34 + (units - 300) * 10.37;
+            } 
+        	else if (units > 500) {
+                amount = 100 * 3.36 + 200 * 7.34 + 200 * 10.37 + (units - 500) * 11.86;
+            }
+        
+    }
+    
+}

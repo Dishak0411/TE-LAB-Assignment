@@ -1,0 +1,20 @@
+public class Marksheet {
+    public String studentName { get; set; }
+    public Integer maths { get; set; }
+    public Integer science { get; set; }
+    public Integer english { get; set; }
+    public Integer history { get; set; }
+    public Double totalMarks { get; set; }
+    public Double percentage { get; set; }
+    public Boolean showResult { get; set; }
+
+    public Marksheet() {
+        showResult = false;
+    }
+
+    public void calculateResult() {
+        totalMarks = maths + science + english + history;
+        percentage = totalMarks / 4;
+        showResult = true;
+    }
+}
